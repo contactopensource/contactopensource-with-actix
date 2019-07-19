@@ -1,0 +1,146 @@
+[package]
+name = "contactopensource_with_actix"
+version = "0.2.0"
+authors = ["Joel Parker Henderson <joel@contactopensource.com>"]
+edition = "2018"
+
+[dependencies]
+
+# Actix actors framework
+actix = "0.8.3"
+
+# actix-diesel: Actix integration of Diesel ORM
+actix-diesel = "0.3.0"
+
+# actix-files: Actix file support, for static files, for actix web
+actix-files = "0.1.3"
+
+# actix-form-data: library for retrieving form data from Actix Web's multipart streams.
+actix-form-data = "0.4.0"
+
+# actix-identity: Actix identity service for actix web framework
+actix-identity = "*"
+
+# actix-multipart-rfc7578: implements multipart/form-data media type described in RFC 7578.
+#actix-multipart-rfc7578 = "0.1.0"  #TODO uncomment when crate is updated
+
+# actix-net: Actix networking services framework
+actix-net = "*"
+
+# actix-rt: Actix runtime
+actix-rt = "*"
+
+# actix-session: Actix session, a general solution for session management, using cookies.
+actix-session = "0.2.0"
+
+# actix-tools: components for Actix and Actix-web to build modular, 12-factor compliant apps.
+actix-tools = "0.1.0"
+
+# actix-web: Actix web framework is simple, pragmatic, extremely fast, and for Rust.
+actix-web = "1.0.4"
+
+# actix-web-httpauth: HTTP authentication schemes for actix-web framework.
+actix-web-httpauth = "0.3.1"
+
+# Type-safe, compiled Jinja-like templates for Rust
+askama = "0.8"
+
+# background-jobs: tooling to run processes asynchronously, such as web services.
+background-jobs = "0.5.1"
+
+# bcrypt: easily hash and verify passwords using bcrypt.
+bcrypt = ">= 0.2.1"
+
+# bigdecimal: enable Rust to use big decimal numbers.
+# Note: version must match the diesel dependency version.
+# Features must include serde, to be able to handle bigdecimal.
+bigdecimal = { version = "= 0.0.14", features = ["serde"] }
+
+# bytes: a utility library for working with bytes.
+bytes = "0.4.12"
+
+# chrono: date and time library for Rust.
+chrono = { version = "0.4", features = ["serde"] }
+
+# clap: Command Line Argument Parser for Rust.
+clap = {version = "2.33", features = ["yaml"]}
+
+# diesel: A safe, extensible ORM and Query Builder for Rust.
+#
+#   * chrono: for time data types
+#   * network-address: for IP address data types
+#   * numeric: for numeric data types, such as decimals
+#   * postgres: for PostgreSQL databases
+#   * sqlite: for SQLite databases
+#   * r2d2: for Rust connection pooling optimizations
+#   * serde_json: for JSON data types
+#   * uuid: for UUID data types
+#
+diesel = { version = "1.4.2", features = ["128-column-tables", "chrono", "network-address", "numeric", "postgres", "sqlite", "r2d2", "serde_json", "url", "uuid"] }
+
+# dotenv: environment configuration implementation of dotenv for Rust.
+dotenv = "0.9.0"
+
+# env_logger: a logging implementation for log which is configured via an environment variable.
+env_logger = "*"
+
+# failure: experimental error handling abstraction.
+failure = "*"
+
+# futures: an implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
+futures = "*"
+
+# jsonwebtoken: create and parse JWT in a strongly typed way.
+jsonwebtoken = "*"
+
+# r2d2: a generic connection pool.
+# Version must match the diesel dependency version
+r2d2 = "= 0.8.4"
+
+# rand: A Rust library for random number generation.
+rand = "0.6.5"
+
+# rust-argon2: Rust library for hashing passwords using Argon2 password-hashing function.
+#
+# For algorithm, we prefer Argon2 (preferrably Argon2id) over Bcrypt, Scrypt, PBKDF2.
+#
+# For Argon2 implementation, we prefer the crate rust-argon2 over:
+#
+#   * argonautica: more idiomatic, and faster, but wraps C, and needs a C compiler.
+#   * argon2rs: more popular, but not updated recently, and lacks Argon2id.
+#
+rust-argon2 = "0.4.0"
+
+# Serde: a framework for serializing and deserializing Rust data structures.
+# The Serde crate has core APIs, including Serialize and Deserialize traits. 
+# Always required for Serde. The "derive" feature is only required when
+# using #[derive(Serialize, Deserialize)] to make Serde work with structs
+# and enums defined in your crate.
+serde = { version = "1.0.91", features = ["derive"] }
+
+# serde_derive: macros 1.1 implementation of #[derive(Serialize, Deserialize)].
+# Version must match the serde dependency version.
+serde_derive = "1.0.91"
+
+# serde_json: a JSON serialization file format.
+# Each data format lives in its own crate.
+serde_json = { version = "1.0.39", features = ["arbitrary_precision"] }
+
+# sparkpost # Rust bindings for sparkpost email api v1.
+
+# uuid: Generate and parse UUIDs.
+#
+# Version must match the diesel dependency version
+#
+#   * v1 - adds the Uuid::new_v1 function and the ability to create a V1 using an implementation of uuid::v1::ClockSequence (usually uuid::v1::Context) and a timestamp from time::timespec.
+#   * v3 - adds the Uuid::new_v3 function and the ability to create a V3 UUID based on the MD5 hash of some data.
+#   * v4 - adds the Uuid::new_v4 function and the ability to randomly generate a Uuid.
+#   * v5 - adds the Uuid::new_v5 function and the ability to create a V5 UUID based on the SHA1 hash of some data.
+#   * serde - adds the ability to serialize and deserialize a Uuid using the serde crate.
+#
+# You need to enable one of the following Cargo features together with v3, v4 or v5 feature if you're targeting wasm32 architecture:
+#
+#   * stdweb - enables support for OsRng on wasm32-unknown-unknown via stdweb combined with cargo-web
+#   * wasm-bindgen - wasm-bindgen enables support for OsRng on wasm32-unknown-unknown via wasm-bindgen
+#
+uuid = { version = "= 0.6.5", features = ["serde", "v1", "v3", "v4", "v5"] }
